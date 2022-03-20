@@ -1,0 +1,182 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <title>Momentum</title>
+</head>
+<body>
+    <div class="hidden" id="login-wrap">
+        <form id="login-form">
+            <div class="title">Welcome!</div>
+            <div id="login-input-wrap">
+                <input class="text-data" maxlength="15" type="text" placeholder="Write your Name" required>
+                <input class="submit-btn btn" type="submit" value="LOGIN">
+            </div>
+        </form>
+        <div class="hidden" id="greeting"></div>
+    </div>
+    <div class="hidden" id="main-wrap">
+        <div id="header-wrap">
+            <div id="title-wrap">
+                <span id="username"></span>
+                <span>'s story</span>
+            </div>
+
+            <!-- <div id="music-box-wrap"> -->
+            <label class="logout-wrap">
+                <input class="logout-btn hidden" type="button" value="">
+                <svg class="logout-icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M570.10688 47.2576H453.90336v525.52192h116.1984V47.2576z m208.86016 86.8864L697.6512 214.9376c92.87168 63.45728 162.42688 173.14304 162.42688 300.05248 0 190.47936-156.544 346.28608-348.17536 346.28608-191.42656 0-348.17536-155.80672-348.17536-346.28608 0-126.90944 69.76-236.5952 168.30976-294.27712L245.0432 134.144C129.05472 220.71296 47.73376 359.18848 47.73376 514.99008c0 254.03904 209.0752 461.75232 464.16384 461.75232 255.29856 0 464.36864-207.70816 464.36864-461.75232 0.00512-155.8016-81.31072-294.27712-197.2992-380.84608z" fill="" /></svg>
+            </label>
+        </div>
+        <div id="section-wrap">
+            <div class="section" id="section1">
+                <div id="date-info-wrap">
+                    <div class="widget" id="clock-wrap">
+                        <div class="clock">
+                            <p class="time">00:00</p>
+                            <p class="date">2022.01.01</p>
+                        </div>
+                    </div>
+                    <div class="widget" id="date-wrap">
+                        <div id="date-main-wrap">
+                            <div>
+                                <p class="month">JAN</p>
+                                <p class="day">1</p>
+                                <p class="day-of-week">MON</p>
+                            </div>
+                        </div>
+                        <div id="calendar-wrap">
+                            <p class="month">2022 JANUARY</p>
+                            <div class="calendar">
+
+                            </div>
+                            <table class="template calendar">
+                                <thead>
+                                    <tr>
+                                        <th class="day-off">SUN</th>
+                                        <th>MON</th>
+                                        <th>TUE</th>
+                                        <th>WED</th>
+                                        <th>THU</th>
+                                        <th>FRI</th>
+                                        <th class="day-off">SAT</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="template week-wrap">
+                                        <td class="day-off"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="day-off"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget" id="todo-list-wrap">
+                    <div class="widget-title">TODO LIST</div>
+                    <form id="todo-form">
+                        <label class="tag-wrap">
+                            <input type="checkbox">
+                            <div class="tag circle red selected" color="red"></div>
+                            <div class="tooltip">
+                                <div class="tag circle red" color="red"></div>
+                                <div class="tag circle yellow" color="yellow"></div>
+                                <div class="tag circle green" color="green"></div>
+                                <div class="tag circle blue" color="blue"></div>
+                                <div class="tag circle purple" color="purple"></div>
+                            </div>
+                        </label>
+                        <input class="todo-input" type="text" placeholder="Add New Todo" required/>
+                    </form>
+                    <div class="item-list" id="todo-list">
+                        <div class="template todo-wrap item">
+                            <div class="tag line"></div>
+                            <label class="checkbox-wrap">
+                                <input class="check-data" type="checkbox"/>
+                                <span class="checkmark"></span>
+                                <p class="content"></p>
+                            </label>
+
+                            <input class="delete-btn btn" type="button" value="✕">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section2">
+                <div class="widget" id="weather-wrap">
+                    <div id="today-weather-wrap">
+                        <div class="default-info ele">
+                            <p class="city widget-title"></p>
+                            <p class="temp"></p>
+                            <div class="temp-detail-wrap">
+                                <p class="temp-detail"></p>
+                                <p class="temp-feels-like"></p>
+                            </div>
+                        </div>
+                        <div class="cloud-info ele">
+                            <img class="cloud-icon"></img>
+                        </div>
+                    </div>
+                    <div id="weather-forcast-wrap">
+                        <div class="template weather-wrap">
+                            <div class="time"></div>
+                            <div class="cloud-info">
+                                <img class="cloud-icon"></img>
+                            </div>
+                            <div class="temp"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="widget" id="bookmark-wrap">
+                    <div class="widget-title">BOOKMARK</div>
+                    <form id="bookmark-form">
+                        <input class="title" type="text" placeholder="Title" required/>
+                        <input class="url" type="text" placeholder="URL" required/>
+                        <input class="submit-btn btn" type="submit" value="SAVE">
+                    </form>
+                    <div class="item-list" id="bookmark-list">
+                        <div class="template bookmark-wrap item">
+                            <a class="link" target="_blank"></a>
+                            <input class="delete-btn btn" type="button" value="✕">
+                        </div>
+                    </div>
+                </div>
+                <div class="widget" id="quote-wrap">
+                    <div id="quote-bkg"></div>
+                    <div id="quote-text">
+                        <div id="quote-bkg-dark"></div>
+                        <div id="quote">
+                            <div class="content">
+                            </div>
+                            <div class="author">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/const_var.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/bookmark.js"></script>
+
+</body>
+</html>

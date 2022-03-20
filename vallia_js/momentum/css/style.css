@@ -1,0 +1,675 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+:root {
+    --max-width: 1920px;
+    --main-color1: #9796f0;
+    --main-color2: #fbc7d4;
+    --main-color3: #FBEBFA;
+    --default-font-color: #636363;
+    --default-input-font-color: #C0C0C0;
+}
+
+/* screen */
+@media screen and (max-width: 960px) {
+    #section-wrap {
+        flex-direction: column;
+    }
+    .section {
+        width: 100% !important;
+    }
+}
+
+
+/* font style */
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    src: url("../font/Noto_Sans_KR/NotoSansKR-Regular.otf") format('truetype');
+}
+@font-face {
+    font-family: 'Noto Sans KR';
+    src: url("../font/Noto_Sans_KR/NotoSansKR-Bold.otf") format('truetype');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url("../font/Montserrat/Montserrat-VariableFont_wght.ttf") format('truetype');
+    unicode-range: U+0041-005A, U+0061-007A;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+* {
+    font-family: 'Noto Sans KR', 'Montserrat', sans-serif !important;
+}
+
+
+
+div, span, p, input,
+a, a:visited, a:link {
+    color: var(--default-font-color);
+    font-size: 1em;
+}
+div, span, p {
+    cursor: default;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: var(--main-color1);
+}
+
+/* input text */
+input[type="text"]{
+    border: 0;
+    outline: none;
+    padding: 0.3em 0;
+    border-bottom: 1px solid var(--main-color1);
+    background-color: transparent;
+    width: 100%;
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus {
+    animation-name: input_focus;
+    animation-duration: 0.05s;
+    animation-fill-mode: forwards;
+}
+@keyframes input_focus {
+    from {
+        border-bottom-width: 1px;
+    }
+    to {
+        border-bottom-width: 2px;
+    }
+}
+
+/* custom checkbox */
+.checkbox-wrap {
+    display: block;
+    position: relative;
+    padding-left: 1.5em;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.checkbox-wrap .checkmark,
+.checkbox-wrap .content {
+    cursor: pointer;
+}
+
+.checkbox-wrap input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkbox-wrap .checkmark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 1em;
+    width: 1em;
+    background-color: var(--default-input-font-color);
+}
+
+
+.checkbox-wrap input[type="checkbox"]:checked ~.content {    
+    color: var(--default-input-font-color);
+    text-decoration: line-through;
+}
+
+
+
+.checkbox-wrap:hover input[type="checkbox"] ~ .checkmark {
+    background-color: var(--main-color1);
+}
+
+.checkbox-wrap input[type="checkbox"]:checked ~ .checkmark {
+    background-color: var(--main-color1);
+}
+
+
+
+.checkbox-wrap .checkmark:after {
+    content: "";
+    position: absolute;
+    /* display: none; */
+}
+
+.checkbox-wrap input[type="checkbox"]:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-wrap .checkmark:after {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 0.4em;
+    height: 0.4em;
+    border: solid #FBEBFA;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+} 
+  
+
+
+
+
+input::placeholder {
+    color: var(--default-input-font-color);
+    font-style: italic;
+}
+
+#title-wrap span {
+    font-family: 'Righteous', cursive !important;
+}
+
+.hidden, .template {
+    display: none !important;
+}
+
+.btn {
+    background-color: var(--main-color1);
+    color: var(--main-color3);
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.3em 0.5em;
+    cursor: pointer;
+}
+
+
+/* login page */
+#login-wrap {
+    width:100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(var(--main-color1), var(--main-color2));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#login-form {
+    background-color: white;
+    padding: 4em 5em;
+}
+#login-form .title {
+    font-size: 5em;
+    font-family: 'Righteous', cursive !important;
+    color: var(--main-color2);
+    text-shadow: 3px 3px #F49AC3;
+}
+#login-input-wrap {
+    display: flex;
+    margin-top: 3em;
+}
+#login-input-wrap input:not(:last-child) {
+    margin-right: 0.5em;
+}
+
+
+
+/* main page */
+#main-wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+
+
+#header-wrap {
+    display: flex;
+    padding: 1.5em 1em;
+    align-items: center;
+}
+
+#header-wrap .logout-wrap{
+    margin-left: auto;
+    cursor: pointer;
+}
+#header-wrap .logout-icon{
+    font-size: 1.3em;
+    color: var(--main-color2)
+}
+
+#section-wrap {
+    padding: 0.5em 0.5em;
+}
+
+/* header */
+#header-wrap
+{
+    background-color: var(--main-color1);
+}
+#title-wrap span {
+    font-size: 2em;
+    color: var(--main-color3);
+    text-shadow: 3px 3px #F49AC3;
+}
+
+#music-box-wrap {
+
+}
+
+/* section */
+#section-wrap {
+    display: flex;
+}
+.section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+#section1 {
+
+}
+#section2 {
+
+}
+
+.widget {
+    border: 1px solid var(--main-color1);
+    margin: 0.7em;
+    padding: 1.2em 1.7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1em;
+}
+.widget-title {
+    color: var(--main-color1);
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+/* date info widget */
+#date-info-wrap{
+    display: flex;
+    height: 18em;
+}
+#clock-wrap {
+    width:25%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#clock-wrap .time {
+    font-weight: bold;
+    font-size: 1.7em;
+    margin-bottom: 0.3em;
+}
+
+#clock-wrap .date {
+    
+}
+
+#date-wrap {
+    width:75%;
+    display: flex;
+    background-color: var(--main-color1);
+    padding:0;
+    overflow: hidden
+}
+#date-main-wrap, #calendar-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#date-main-wrap {
+    width: 30%;
+    height: 100%;
+    background-color: white;
+}
+#calendar-wrap {
+    width: 70%;
+}
+
+#date-main-wrap .month,
+#date-main-wrap .day {
+    margin-bottom: 0.3em;   
+}
+#date-main-wrap .month {
+
+}
+#date-main-wrap .day {
+    font-size: 1.7em;
+    font-weight: bold;
+}
+#date-main-wrap .day-of-week {
+    
+}
+
+#date-wrap .day-off {
+    color: var(--main-color2);
+}
+
+#calendar-wrap{
+    height: 100%;
+}
+
+#calendar-wrap .month {
+    font-size: 0.8em;
+    color: var(--main-color3);
+    margin-bottom: 0.5em;
+}
+#calendar-wrap .calendar th, td{
+    font-size: 0.7em;
+    padding: 0.5em 0.3em;
+    text-align: center;
+}
+#calendar-wrap .calendar .today{
+    border: 1px solid var(--main-color3);
+}
+
+/* todo list widget */
+#todo-list-wrap {
+    height: 500px;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+#todo-form, #todo-list {
+    width: 100%;
+    margin-top: 1em;
+}
+#todo-list {
+    height: 400px;
+    overflow-y: scroll;
+}
+
+#todo-form {
+    display: flex;
+    align-items: center;
+}
+#todo-form .todo-input{
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#todo-form .tag-wrap {
+    position: relative;
+}
+#todo-form .tag-wrap input {
+    display: none;
+}
+#todo-form .tag-wrap input:checked ~ .tooltip {
+    display: flex;
+    top: -2.2em;
+    left:0;
+    opacity: 1;
+}
+
+#todo-form .tag-wrap .tooltip {
+    display: None;
+    position: absolute;
+    border-radius: 0.3em;
+    background: white;
+    border: 1px solid var(--main-color1);
+    z-index: 2;
+    padding: 0.3em 0.4em;
+    top: 0;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tag-wrap .tag.circle {
+    content:"";
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.todo-wrap .tag.line {
+    content:"";
+    width: 4px;
+    height: 1.3em;
+    background: transparent;
+    margin-right: 0.3em;
+}
+
+.tag.red {
+    background: #FF736A !important;
+}
+.tag.yellow {
+    background: #FFE744 !important;
+}
+.tag.green {
+    background: #64FF78 !important;
+}
+.tag.blue {
+    background: #45A5FF !important;
+}
+.tag.purple {
+    background: #D784FF !important;
+}
+
+
+
+
+#todo-form .tag-wrap .tooltip .tag:not(:last-child){
+    margin-right: 0.5em;
+}
+
+.item-list .item{
+    display: flex;
+    align-items: center;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    padding: 0.3em 0;
+}
+
+.item-list .item .delete-btn{
+    margin-left: auto;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: var(--main-color1);
+}
+
+#weather-wrap {
+    flex-direction: column;
+    min-height: 14em;
+}
+
+#today-weather-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#today-weather-wrap p:not(:last-child) {
+    margin-bottom: 0.6em;
+}
+#today-weather-wrap .city {
+}
+#today-weather-wrap .temp {
+    font-weight: bold;
+    font-size: 1.7em;
+    margin-bottom: 0.6em !important;
+}
+#today-weather-wrap .temp-detail-wrap {
+    border-left: 2px solid var(--main-color1);
+    padding-left: 0.6em;
+    font-size: 0.9em;
+}
+
+#weather-forcast-wrap {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    margin-top: 1.2em;
+}
+#weather-forcast-wrap .weather-wrap{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8em;
+}
+#weather-forcast-wrap .cloud-icon {
+    width: 5em;
+}
+#weather-forcast-wrap .weather-wrap:not(:last-child) {
+    border-right: 1px solid var(--main-color1);
+}
+
+#bookmark-wrap {
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+#bookmark-wrap #bookmark-form,
+#bookmark-wrap #bookmark-list {
+    width: 100%;
+    margin-top: 1em;
+}
+#bookmark-wrap #bookmark-list {
+    height: 180px;
+    overflow-y: scroll;
+}
+#bookmark-wrap #bookmark-form {
+    display: flex;
+}
+#bookmark-wrap #bookmark-form input:not(:last-child) {
+    margin-right: 0.5em;
+}
+#bookmark-wrap #bookmark-form .submit-btn {
+}
+
+#quote-wrap {
+    height: 100%;
+    min-height: 200px;
+    overflow: hidden;
+    padding:0;
+    position:relative;
+}
+#quote-bkg, #quote-bkg-dark,
+#quote {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+#quote-bkg {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#quote-text:hover {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    animation-name: fade;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: 1;
+}
+@keyframes fade {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+}
+
+#quote-bkg-dark {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(151,150,240); /* Fallback color */
+    background-color: rgba(151,150,240, 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+#quote {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+#quote div {
+    width: 100%;
+    color: var(--main-color3) !important;
+}
+
+#quote .content {
+    margin-bottom: 1em;
+    line-height: 1.5em;
+}
+
+#quote .author {
+    font-size: 0.8em;
+    text-align: right;
+}
+#quote .author:before{
+    content: "-";
+    padding-right: 0.2em;
+}
